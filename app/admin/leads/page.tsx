@@ -40,6 +40,7 @@ export default async function LeadsPage() {
                 </div>
                 <div className="flex flex-wrap gap-x-6 gap-y-1 text-xs text-ink/65">
                   <span>{lead.email}</span>
+                  {lead.phone && <span>Tel: {lead.phone}</span>}
                   {lead.eventDate && <span>Fecha: {lead.eventDate}</span>}
                   {lead.venue && <span>Venue: {lead.venue}</span>}
                   {lead.budget && <span>Presupuesto: {lead.budget}</span>}

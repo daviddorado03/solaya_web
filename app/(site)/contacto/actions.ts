@@ -11,6 +11,9 @@ export async function submitContactAction(
 ): Promise<ContactState> {
   const name = String(formData.get("name") ?? "").trim();
   const email = String(formData.get("email") ?? "").trim();
+  const phoneLada = String(formData.get("phoneLada") ?? "").trim();
+  const phoneNumber = String(formData.get("phoneNumber") ?? "").trim();
+  const phone = phoneNumber ? `${phoneLada} ${phoneNumber}` : "";
   const eventDate = String(formData.get("eventDate") ?? "").trim();
   const venue = String(formData.get("venue") ?? "").trim();
   const budget = String(formData.get("budget") ?? "").trim();
@@ -21,7 +24,7 @@ export async function submitContactAction(
   }
 
   try {
-    await addLead({ name, email, eventDate, venue, budget, message });
+    await addLead({ name, email, phone, eventDate, venue, budget, message });
     revalidatePath("/admin/leads");
   } catch {
     return {

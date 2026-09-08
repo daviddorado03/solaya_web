@@ -39,6 +39,7 @@ export type Lead = {
   id: string;
   name: string;
   email: string;
+  phone: string;
   eventDate: string;
   venue: string;
   budget: string;

@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { submitContactAction, type ContactState } from "./actions";
+import { DIAL_CODES } from "@/lib/dialCodes";
 
 const BUDGETS = ["$75,000 – $100,000", "$100,000 – $150,000", "$150,000+"];
 
@@ -45,6 +46,31 @@ export function ContactForm() {
       </div>
 
       <div className="flex flex-col gap-5 md:flex-row">
+        <div className="flex flex-1 flex-col gap-2">
+          <span className="text-[11px] tracking-[1.5px] text-ink/60 uppercase">
+            Teléfono / WhatsApp
+          </span>
+          <div className="flex gap-2">
+            <select
+              name="phoneLada"
+              defaultValue="+52"
+              aria-label="Lada del país"
+              className="h-11 border-b border-taupe bg-transparent text-sm outline-none focus:border-bronze"
+            >
+              {DIAL_CODES.map((d) => (
+                <option key={d.country} value={d.code}>
+                  {d.code} {d.country}
+                </option>
+              ))}
+            </select>
+            <input
+              type="tel"
+              name="phoneNumber"
+              placeholder="55 1234 5678"
+              className="h-11 flex-1 border-b border-taupe bg-transparent outline-none focus:border-bronze"
+            />
+          </div>
+        </div>
         <label className="flex flex-1 flex-col gap-2">
           <span className="text-[11px] tracking-[1.5px] text-ink/60 uppercase">
             Fecha aproximada del evento
@@ -55,14 +81,15 @@ export function ContactForm() {
             className="h-11 border-b border-taupe bg-transparent outline-none focus:border-bronze"
           />
         </label>
-        <label className="flex flex-1 flex-col gap-2">
-          <span className="text-[11px] tracking-[1.5px] text-ink/60 uppercase">Lugar / venue</span>
-          <input
-            name="venue"
-            className="h-11 border-b border-taupe bg-transparent outline-none focus:border-bronze"
-          />
-        </label>
       </div>
+
+      <label className="flex flex-col gap-2">
+        <span className="text-[11px] tracking-[1.5px] text-ink/60 uppercase">Lugar / venue</span>
+        <input
+          name="venue"
+          className="h-11 border-b border-taupe bg-transparent outline-none focus:border-bronze"
+        />
+      </label>
 
       <div className="flex flex-col gap-2">
         <span className="text-[11px] tracking-[1.5px] text-ink/60 uppercase">
