@@ -1,4 +1,14 @@
-import { put, del, list } from "@vercel/blob";
+import { put, del, get } from "@vercel/blob";
+
+// This project's Blob store is configured as PRIVATE (Vercel's current
+// default for new stores) — reads and writes must both use access:
+// "private". Photos are never served from the Blob domain directly;
+// app/photos/[...path]/route.ts proxies them publicly. See photoPublicUrl().
+const ACCESS = "private" as const;
+
+export function photoPublicUrl(pathname: string): string {
+  return "/" + pathname;
+}
 
 export type Category =
   | "hero"
@@ -49,13 +59,11 @@ async function readManifest(): Promise<Manifest> {
   // before the Vercel Blob store is created), fail soft: the public pages
   // then render their placeholder tiles instead of crashing.
   try {
-    const { blobs } = await list({ prefix: MANIFEST_PATH, limit: 1 });
-    const manifestBlob = blobs.find((b) => b.pathname === MANIFEST_PATH);
-    if (!manifestBlob) return emptyManifest;
+    const result = await get(MANIFEST_PATH, { access: ACCESS, useCache: false });
+    if (!result || result.statusCode !== 200) return emptyManifest;
 
-    const res = await fetch(manifestBlob.url, { cache: "no-store" });
-    if (!res.ok) return emptyManifest;
-    const data = (await res.json()) as Partial<Manifest>;
+    const text = await new Response(result.stream).text();
+    const data = JSON.parse(text) as Partial<Manifest>;
     return { photos: data.photos ?? [], leads: data.leads ?? [] };
   } catch {
     return emptyManifest;
@@ -64,7 +72,7 @@ async function readManifest(): Promise<Manifest> {
 
 async function writeManifest(manifest: Manifest): Promise<void> {
   await put(MANIFEST_PATH, JSON.stringify(manifest, null, 2), {
-    access: "public",
+    access: ACCESS,
     contentType: "application/json",
     addRandomSuffix: false,
     allowOverwrite: true,
@@ -97,7 +105,7 @@ export async function addPhoto(
   const pathname = `photos/${category}/${id}.${ext}`;
 
   const blob = await put(pathname, file, {
-    access: "public",
+    access: ACCESS,
     addRandomSuffix: false,
   });
 

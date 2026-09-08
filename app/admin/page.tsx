@@ -2,7 +2,7 @@ import Image from "next/image";
 import { AdminNav } from "@/components/AdminNav";
 import { UploadForm } from "./UploadForm";
 import { deletePhotoAction, updateOrderAction } from "./actions";
-import { getPhotos, CATEGORIES } from "@/lib/blob";
+import { getPhotos, photoPublicUrl, CATEGORIES } from "@/lib/blob";
 
 export default async function AdminPage() {
   const photos = await getPhotos();
@@ -40,7 +40,7 @@ export default async function AdminPage() {
                       <div key={photo.id} className="flex flex-col gap-2 border border-taupe p-2">
                         <div className="relative aspect-square w-full overflow-hidden bg-panel">
                           <Image
-                            src={photo.url}
+                            src={photoPublicUrl(photo.pathname)}
                             alt={photo.caption || cat.label}
                             fill
                             sizes="200px"

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { Photo } from "@/lib/blob";
+import { photoPublicUrl, type Photo } from "@/lib/blob";
 import { PlaceholderTile } from "./PlaceholderTile";
 
 export function PhotoTile({
@@ -22,7 +22,7 @@ export function PhotoTile({
   return (
     <div className={`relative h-full w-full overflow-hidden ${className}`}>
       <Image
-        src={photo.url}
+        src={photoPublicUrl(photo.pathname)}
         alt={photo.caption || fallbackLabel}
         fill
         sizes={sizes}
