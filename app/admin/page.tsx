@@ -4,6 +4,10 @@ import { UploadForm } from "./UploadForm";
 import { deletePhotoAction, updateOrderAction } from "./actions";
 import { getPhotos, photoPublicUrl, CATEGORIES } from "@/lib/blob";
 
+// Admin data changes from user actions (uploads, deletes) — never serve a
+// cached/static snapshot here.
+export const dynamic = "force-dynamic";
+
 export default async function AdminPage() {
   const photos = await getPhotos();
 

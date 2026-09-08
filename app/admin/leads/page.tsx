@@ -1,6 +1,10 @@
 import { AdminNav } from "@/components/AdminNav";
 import { getLeads } from "@/lib/blob";
 
+// Leads arrive from the public contact form — never serve a cached/static
+// snapshot here.
+export const dynamic = "force-dynamic";
+
 function formatDate(iso: string) {
   return new Date(iso).toLocaleString("es-MX", {
     dateStyle: "medium",

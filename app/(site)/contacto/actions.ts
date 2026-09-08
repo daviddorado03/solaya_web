@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { addLead } from "@/lib/blob";
 
 export type ContactState = { ok: boolean; error?: string };
@@ -21,6 +22,7 @@ export async function submitContactAction(
 
   try {
     await addLead({ name, email, eventDate, venue, budget, message });
+    revalidatePath("/admin/leads");
   } catch {
     return {
       ok: false,
