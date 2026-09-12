@@ -1,6 +1,6 @@
 import { ContactForm } from "./ContactForm";
 
-export const metadata = { title: "Contacto — Solaya Studio" };
+export const metadata = { title: "Contacto — Solaya Estudio" };
 
 export default function ContactoPage() {
   const email = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "[correo de contacto]";

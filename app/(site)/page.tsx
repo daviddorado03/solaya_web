@@ -45,7 +45,7 @@ export default async function HomePage() {
           Fotografiamos pocas bodas al año, a propósito — el tiempo que le damos a cada historia
           es lo que hace la diferencia.
         </p>
-        <Link href="/studio" className="mt-2 text-xs tracking-[2px] text-bronze uppercase">
+        <Link href="/estudio" className="mt-2 text-xs tracking-[2px] text-bronze uppercase">
           Conoce el estudio →
         </Link>
       </section>

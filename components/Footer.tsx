@@ -41,7 +41,7 @@ export function Footer() {
         )}
         <span className="text-[11px] tracking-[2px] text-ink/60 uppercase">{email}</span>
       </div>
-      <span className="mt-2 text-[10px] text-ink/45">© Solaya Studio</span>
+      <span className="mt-2 text-[10px] text-ink/45">© Solaya Estudio</span>
     </div>
   );
 }

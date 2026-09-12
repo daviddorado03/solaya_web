@@ -15,7 +15,7 @@ const jost = Jost({
 });
 
 export const metadata: Metadata = {
-  title: "Solaya Studio — Fotografía de bodas de autor",
+  title: "Solaya Estudio — Fotografía de bodas de autor",
   description:
     "Fotografía de autor para bodas excepcionales. Cobertura editorial e íntima en Ciudad de México y destino.",
 };

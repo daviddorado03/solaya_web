@@ -15,7 +15,7 @@ export default function AdminLoginPage() {
         className="flex w-full max-w-sm flex-col items-center gap-6 border border-bronze bg-panel px-10 py-12"
       >
         <span className="font-display text-2xl text-bronze">S</span>
-        <span className="font-display text-lg tracking-[4px]">SOLAYA STUDIO</span>
+        <span className="font-display text-lg tracking-[4px]">SOLAYA ESTUDIO</span>
         <p className="text-center text-xs tracking-[2px] text-ink/60 uppercase">Panel de administración</p>
 
         <label className="flex w-full flex-col gap-2">

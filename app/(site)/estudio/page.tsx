@@ -28,7 +28,7 @@ const STEPS = [
   },
 ];
 
-export default async function StudioPage() {
+export default async function EstudioPage() {
   const photo = await getSingletonPhoto("studio");
 
   return (
@@ -43,13 +43,13 @@ export default async function StudioPage() {
             La cámara como oficio, no como trámite.
           </h1>
           <p className="text-sm leading-loose text-ink/75 md:text-base">
-            Solaya Studio nace de una idea simple: cada boda merece ser fotografiada con la misma
+            Solaya Estudio nace de una idea simple: cada boda merece ser fotografiada con la misma
             atención que una editorial de moda. Trabajamos pocos eventos al año, de manera
             consultiva, para que cada entrega tenga tiempo, criterio y una mirada propia — no una
             fórmula repetida.
           </p>
           <span className="font-display mt-2 text-lg text-bronze italic">
-            — El equipo detrás de Solaya Studio
+            — El equipo detrás de Solaya Estudio
           </span>
         </div>
       </section>

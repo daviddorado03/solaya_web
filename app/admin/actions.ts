@@ -52,7 +52,7 @@ export type UploadState = { error?: string; success?: boolean };
 function revalidatePublicPages() {
   revalidatePath("/");
   revalidatePath("/portafolio");
-  revalidatePath("/studio");
+  revalidatePath("/estudio");
   revalidatePath("/admin");
 }
 

@@ -1,7 +1,7 @@
-# Solaya Studio — sitio web
+# Solaya Estudio — sitio web
 
 Sitio de la marca premium (Next.js 16 + Tailwind v4). 4 páginas públicas
-(Home, Portafolio, Studio, Contacto) más un panel `/admin` para subir y
+(Home, Portafolio, Estudio, Contacto) más un panel `/admin` para subir y
 borrar fotos sin tocar código.
 
 ## Cómo funciona el almacenamiento de fotos

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 const LINKS = [
   { href: "/portafolio", label: "Portafolio" },
-  { href: "/studio", label: "Studio" },
+  { href: "/estudio", label: "Estudio" },
   { href: "/contacto", label: "Contacto" },
 ];
 
@@ -14,8 +14,7 @@ export function NavBar() {
 
   return (
     <div className="flex h-[88px] items-center justify-between border-b border-taupe px-8 md:px-16">
-      <Link href="/" className="flex items-baseline gap-2">
-        <span className="font-display text-xl text-bronze">S</span>
+      <Link href="/" className="flex items-baseline">
         <span className="font-display text-xl tracking-[3px] text-ink">SOLAYA</span>
       </Link>
 
