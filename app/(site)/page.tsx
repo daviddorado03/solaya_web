@@ -1,12 +1,13 @@
 import Link from "next/link";
-import { getPhotosByCategory, getSingletonPhoto } from "@/lib/blob";
+import { getPhotosByCategory } from "@/lib/blob";
 import { PhotoTile } from "@/components/PhotoTile";
+import { HeroCarousel } from "@/components/HeroCarousel";
 
 export const revalidate = 60;
 
 export default async function HomePage() {
-  const [hero, ceremonia, sesion, detalles, fiesta] = await Promise.all([
-    getSingletonPhoto("hero"),
+  const [heroPhotos, ceremonia, sesion, detalles, fiesta] = await Promise.all([
+    getPhotosByCategory("hero"),
     getPhotosByCategory("portfolio-ceremonia"),
     getPhotosByCategory("portfolio-sesion"),
     getPhotosByCategory("portfolio-detalles"),
@@ -17,8 +18,8 @@ export default async function HomePage() {
 
   return (
     <>
-      <section className="relative h-[600px] w-full overflow-hidden md:h-[720px]">
-        <PhotoTile photo={hero} fallbackLabel="[Foto hero — pareja, luz natural]" sizes="100vw" priority />
+      <section className="relative h-[440px] w-full overflow-hidden md:h-[560px]">
+        <HeroCarousel photos={heroPhotos} />
         <div className="absolute inset-0 bg-linear-to-b from-ink/15 to-ink/60" />
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 px-6 text-center">
           <span className="text-[11px] tracking-[4px] text-ivory/85 uppercase md:text-[13px] md:tracking-[5px]">

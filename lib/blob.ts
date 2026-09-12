@@ -19,7 +19,7 @@ export type Category =
   | "portfolio-fiesta";
 
 export const CATEGORIES: { value: Category; label: string; singleton: boolean }[] = [
-  { value: "hero", label: "Home — foto principal", singleton: true },
+  { value: "hero", label: "Home — carrusel del hero", singleton: false },
   { value: "studio", label: "Estudio — foto del equipo", singleton: true },
   { value: "portfolio-ceremonia", label: "Portafolio — Ceremonia", singleton: false },
   { value: "portfolio-sesion", label: "Portafolio — Sesión", singleton: false },

@@ -20,8 +20,9 @@ export default async function AdminPage() {
           <h1 className="font-display text-2xl">Fotos del sitio</h1>
           <p className="text-sm text-ink/65">
             Sube una foto, elige en qué sección aparece y listo — se ve reflejada en el sitio en
-            un momento, sin tocar código. &ldquo;Home&rdquo; y &ldquo;Estudio&rdquo; muestran solo
-            una foto (la de menor orden); en Portafolio puedes subir varias por categoría.
+            un momento, sin tocar código. &ldquo;Estudio&rdquo; muestra solo una foto (la de menor
+            orden); &ldquo;Home&rdquo; las usa todas como carrusel (en el orden que definas) y en
+            Portafolio puedes subir varias por categoría.
           </p>
         </div>
 
