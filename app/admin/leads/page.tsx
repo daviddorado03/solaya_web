@@ -43,7 +43,6 @@ export default async function LeadsPage() {
                   {lead.phone && <span>Tel: {lead.phone}</span>}
                   {lead.eventDate && <span>Fecha: {lead.eventDate}</span>}
                   {lead.venue && <span>Venue: {lead.venue}</span>}
-                  {lead.budget && <span>Presupuesto: {lead.budget}</span>}
                 </div>
                 {lead.message && <p className="mt-1 text-sm text-ink/80">{lead.message}</p>}
               </div>

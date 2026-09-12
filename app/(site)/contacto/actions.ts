@@ -16,7 +16,6 @@ export async function submitContactAction(
   const phone = phoneNumber ? `${phoneLada} ${phoneNumber}` : "";
   const eventDate = String(formData.get("eventDate") ?? "").trim();
   const venue = String(formData.get("venue") ?? "").trim();
-  const budget = String(formData.get("budget") ?? "").trim();
   const message = String(formData.get("message") ?? "").trim();
 
   if (!name || !email) {
@@ -24,7 +23,7 @@ export async function submitContactAction(
   }
 
   try {
-    await addLead({ name, email, phone, eventDate, venue, budget, message });
+    await addLead({ name, email, phone, eventDate, venue, message });
     revalidatePath("/admin/leads");
   } catch {
     return {

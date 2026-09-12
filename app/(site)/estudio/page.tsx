@@ -43,10 +43,9 @@ export default async function EstudioPage() {
             La cámara como oficio, no como trámite.
           </h1>
           <p className="text-sm leading-loose text-ink/75 md:text-base">
-            Solaya Estudio nace de una idea simple: cada boda merece ser fotografiada con la misma
-            atención que una editorial de moda. Trabajamos pocos eventos al año, de manera
-            consultiva, para que cada entrega tenga tiempo, criterio y una mirada propia — no una
-            fórmula repetida.
+            Solaya Estudio nace de una idea simple: cada boda merece ser fotografiada con cuidado,
+            tiempo y una mirada propia. Trabajamos pocos eventos al año, de manera consultiva,
+            para que cada entrega tenga ese mismo criterio — no una fórmula repetida.
           </p>
           <span className="font-display mt-2 text-lg text-bronze italic">
             — El equipo detrás de Solaya Estudio

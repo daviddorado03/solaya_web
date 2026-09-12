@@ -28,7 +28,7 @@ export default async function HomePage() {
             Momentos que se cuentan con elegancia.
           </h1>
           <p className="max-w-md text-sm text-ivory/85 md:text-base">
-            Cobertura editorial e íntima para bodas que merecen algo más que un reportaje.
+            Cobertura íntima y de autor para bodas que merecen algo más que un reportaje.
           </p>
           <Link
             href="/contacto"

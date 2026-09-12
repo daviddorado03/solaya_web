@@ -44,7 +44,6 @@ export type Lead = {
   phone: string;
   eventDate: string;
   venue: string;
-  budget: string;
   message: string;
   createdAt: string;
 };

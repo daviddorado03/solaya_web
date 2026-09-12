@@ -4,8 +4,6 @@ import { useActionState } from "react";
 import { submitContactAction, type ContactState } from "./actions";
 import { DIAL_CODES } from "@/lib/dialCodes";
 
-const BUDGETS = ["$75,000 – $100,000", "$100,000 – $150,000", "$150,000+"];
-
 const initialState: ContactState = { ok: false };
 
 export function ContactForm() {
@@ -90,22 +88,6 @@ export function ContactForm() {
           className="h-11 border-b border-taupe bg-transparent outline-none focus:border-bronze"
         />
       </label>
-
-      <div className="flex flex-col gap-2">
-        <span className="text-[11px] tracking-[1.5px] text-ink/60 uppercase">
-          Presupuesto aproximado
-        </span>
-        <div className="flex flex-wrap gap-3">
-          {BUDGETS.map((b) => (
-            <label key={b} className="cursor-pointer">
-              <input type="radio" name="budget" value={b} className="peer sr-only" />
-              <span className="block border border-taupe px-4.5 py-2.5 text-xs text-ink/60 peer-checked:border-bronze peer-checked:text-bronze">
-                {b}
-              </span>
-            </label>
-          ))}
-        </div>
-      </div>
 
       <label className="flex flex-col gap-2">
         <span className="text-[11px] tracking-[1.5px] text-ink/60 uppercase">
