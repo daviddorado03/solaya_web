@@ -13,16 +13,18 @@ export function photoPublicUrl(pathname: string): string {
 export type Category =
   | "hero"
   | "studio"
-  | "portfolio-bodas"
-  | "portfolio-compromisos"
-  | "portfolio-destino";
+  | "portfolio-ceremonia"
+  | "portfolio-sesion"
+  | "portfolio-detalles"
+  | "portfolio-fiesta";
 
 export const CATEGORIES: { value: Category; label: string; singleton: boolean }[] = [
   { value: "hero", label: "Home — foto principal", singleton: true },
   { value: "studio", label: "Studio — foto del equipo", singleton: true },
-  { value: "portfolio-bodas", label: "Portafolio — Bodas", singleton: false },
-  { value: "portfolio-compromisos", label: "Portafolio — Compromisos", singleton: false },
-  { value: "portfolio-destino", label: "Portafolio — Destino", singleton: false },
+  { value: "portfolio-ceremonia", label: "Portafolio — Ceremonia", singleton: false },
+  { value: "portfolio-sesion", label: "Portafolio — Sesión", singleton: false },
+  { value: "portfolio-detalles", label: "Portafolio — Detalles", singleton: false },
+  { value: "portfolio-fiesta", label: "Portafolio — Fiesta", singleton: false },
 ];
 
 export type Photo = {

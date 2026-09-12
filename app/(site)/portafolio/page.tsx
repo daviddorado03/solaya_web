@@ -6,9 +6,10 @@ import { PortfolioGallery } from "@/components/PortfolioGallery";
 export const revalidate = 60;
 
 const TABS: { value: Category; label: string }[] = [
-  { value: "portfolio-bodas", label: "Bodas" },
-  { value: "portfolio-compromisos", label: "Compromisos" },
-  { value: "portfolio-destino", label: "Destino" },
+  { value: "portfolio-ceremonia", label: "Ceremonia" },
+  { value: "portfolio-sesion", label: "Sesión" },
+  { value: "portfolio-detalles", label: "Detalles" },
+  { value: "portfolio-fiesta", label: "Fiesta" },
 ];
 
 export default async function PortafolioPage({
@@ -17,7 +18,7 @@ export default async function PortafolioPage({
   searchParams: Promise<{ categoria?: string }>;
 }) {
   const params = await searchParams;
-  const active = TABS.find((t) => t.value === params.categoria)?.value ?? "portfolio-bodas";
+  const active = TABS.find((t) => t.value === params.categoria)?.value ?? "portfolio-ceremonia";
   const photos = await getPhotosByCategory(active);
 
   return (

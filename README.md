@@ -13,10 +13,11 @@ formulario de contacto. No hay base de datos aparte — un solo servicio
 cubre fotos + los pocos datos que necesita el admin.
 
 Categorías: `hero` y `studio` son "singleton" (se muestra la de menor
-número de orden); las 3 de portafolio (`portfolio-bodas`,
-`portfolio-compromisos`, `portfolio-destino`) aceptan varias fotos. Mientras
-una categoría no tenga fotos, el sitio muestra un placeholder con el mismo
-estilo de marca (no se ve roto).
+número de orden); las 4 de portafolio (`portfolio-ceremonia`,
+`portfolio-sesion`, `portfolio-detalles`, `portfolio-fiesta`) — organizadas
+por momento del día de la boda, no por tipo de evento — aceptan varias
+fotos. Mientras una categoría no tenga fotos, el sitio muestra un
+placeholder con el mismo estilo de marca (no se ve roto).
 
 ## Desarrollo local
 

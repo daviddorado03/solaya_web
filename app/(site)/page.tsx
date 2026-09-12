@@ -5,13 +5,15 @@ import { PhotoTile } from "@/components/PhotoTile";
 export const revalidate = 60;
 
 export default async function HomePage() {
-  const [hero, bodas, compromisos] = await Promise.all([
+  const [hero, ceremonia, sesion, detalles, fiesta] = await Promise.all([
     getSingletonPhoto("hero"),
-    getPhotosByCategory("portfolio-bodas"),
-    getPhotosByCategory("portfolio-compromisos"),
+    getPhotosByCategory("portfolio-ceremonia"),
+    getPhotosByCategory("portfolio-sesion"),
+    getPhotosByCategory("portfolio-detalles"),
+    getPhotosByCategory("portfolio-fiesta"),
   ]);
 
-  const teaser = [...bodas, ...compromisos].slice(0, 7);
+  const teaser = [...ceremonia, ...sesion, ...detalles, ...fiesta].slice(0, 7);
 
   return (
     <>
