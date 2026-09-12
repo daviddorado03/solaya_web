@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getPhotosByCategory, type Category } from "@/lib/blob";
 import { PhotoTile } from "@/components/PhotoTile";
+import { PortfolioGallery } from "@/components/PortfolioGallery";
 
 export const revalidate = 60;
 
@@ -51,16 +52,7 @@ export default async function PortafolioPage({
             ))}
           </div>
         ) : (
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-4 md:auto-rows-[220px]">
-            {photos.map((photo, i) => (
-              <div
-                key={photo.id}
-                className={`aspect-square md:aspect-auto ${i % 3 === 1 ? "md:row-span-2" : ""}`}
-              >
-                <PhotoTile photo={photo} fallbackLabel="" sizes="(min-width: 768px) 33vw, 50vw" />
-              </div>
-            ))}
-          </div>
+          <PortfolioGallery photos={photos} />
         )}
       </section>
     </>
